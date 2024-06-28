@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const OiAccessibility: IconType;
 export declare const OiAlert: IconType;
 export declare const OiApps: IconType;

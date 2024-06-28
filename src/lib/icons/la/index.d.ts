@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const La500Px: IconType;
 export declare const LaAccessibleIcon: IconType;
 export declare const LaAccusoft: IconType;

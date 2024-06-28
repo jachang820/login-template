@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Md123: IconType;
 export declare const Md123Outlined: IconType;
 export declare const Md123Round: IconType;

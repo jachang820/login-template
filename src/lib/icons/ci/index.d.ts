@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const CiPac: IconType;
 export declare const Ci0Xbtc: IconType;
 export declare const Ci2Give: IconType;

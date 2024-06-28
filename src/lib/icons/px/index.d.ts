@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Px4G: IconType;
 export declare const Px4KBox: IconType;
 export declare const Px4K: IconType;

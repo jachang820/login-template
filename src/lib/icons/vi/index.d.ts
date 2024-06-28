@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const ViDefaultFile: IconType;
 export declare const ViDefaultFolderOpened: IconType;
 export declare const ViDefaultFolder: IconType;

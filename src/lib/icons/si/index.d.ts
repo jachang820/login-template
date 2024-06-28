@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Si1001Tracklists: IconType;
 export declare const Si1Password: IconType;
 export declare const Si3M: IconType;

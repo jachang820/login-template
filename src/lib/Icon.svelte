@@ -1,5 +1,20 @@
+<!--
+  Usage:
+  Select icon to use from https://oh-vue-icons.js.org/
+  If the site says to use the statement: import { CiOnt } from "oh-vue-icons/icons";
+  Then instead: import { CiOnt } from "$lib/icons";
+  Pass the icon into the "icon" prop.
+  For example:
+    <script>
+      import Icon from "$lib/Icon.svelte";
+      import type {IconType} from "$lib/icons";
+      import { CiOnt } from "$lib/icons";
+    </script>
+    <Icon icon={CiOnt} />
+  -->
+
 <script lang="ts">
-    import type {IconType} from "$lib/icons/icons";
+    import type {IconType} from "$lib/icons";
 
     // Props
     export let icon: IconType | null = null;

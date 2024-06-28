@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const FcAbout: IconType;
 export declare const FcAcceptDatabase: IconType;
 export declare const FcAddColumn: IconType;

@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const AiAcademiaSquare: IconType;
 export declare const AiAcademia: IconType;
 export declare const AiAcclaimSquare: IconType;

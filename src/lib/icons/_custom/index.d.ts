@@ -1,2 +1,2 @@
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const XSocialMedia: IconType;

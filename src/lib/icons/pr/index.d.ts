@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const PrAlignCenter: IconType;
 export declare const PrAlignJustify: IconType;
 export declare const PrAlignLeft: IconType;

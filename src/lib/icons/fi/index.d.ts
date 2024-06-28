@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const FiAc: IconType;
 export declare const FiAd: IconType;
 export declare const FiAe: IconType;

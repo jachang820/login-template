@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const HiAcademicCap: IconType;
 export declare const HiAdjustments: IconType;
 export declare const HiAnnotation: IconType;

@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Fa500Px: IconType;
 export declare const FaAccessibleIcon: IconType;
 export declare const FaAccusoft: IconType;

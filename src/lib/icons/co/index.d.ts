@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Co500Px5: IconType;
 export declare const Co500Px: IconType;
 export declare const CoAboutMe: IconType;

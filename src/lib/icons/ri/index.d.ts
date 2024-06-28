@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Ri24HoursFill: IconType;
 export declare const Ri24HoursLine: IconType;
 export declare const Ri4KFill: IconType;

@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from "$lib/Icon.svelte";
-    import type {IconType} from "$lib/icons/icons";
+    import type {IconType} from "$lib/icons";
     import {
         MdFacebook as FacebookIcon,
         LaInstagram as InstagramIcon,

@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const PiBulbasaurShiny: IconType;
 export declare const PiBulbasaur: IconType;
 export declare const PiIvysaurShiny: IconType;

@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Gi3DGlasses: IconType;
 export declare const Gi3DHammer: IconType;
 export declare const Gi3DMeeple: IconType;

@@ -1,5 +1,5 @@
 // THIS FILE IS AUTO GENERATED
-import { IconType } from "../icons";
+import { IconType } from "../";
 export declare const Bi123: IconType;
 export declare const BiActivity: IconType;
 export declare const BiAlarmFill: IconType;
