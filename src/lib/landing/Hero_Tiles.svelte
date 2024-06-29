@@ -1,10 +1,13 @@
 <script lang="ts">
+    import type {Modal} from "$lib/landing";
+    import MultiLink from "$lib/MultiLink.svelte";
+
     // Props
     export let header: string;
     export let description: string;
     export let buttonText: string;
     export let previewText: string = "";
-    export let buttonHref: string = "#";
+    export let buttonTarget: Modal | string = "#";
     export let callToActionHref: string = "#";
     export let tile1: string = "https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80";
     export let tile2: string = "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80";
@@ -47,7 +50,7 @@
                         <h1 class="header">{header}</h1>
                         <p class="description">{description}</p>
                         <div class="actions">
-                            <a href="{buttonHref}" class="button">{buttonText}</a>
+                            <MultiLink target={buttonTarget} class="hero-button">{buttonText}</MultiLink>
 
                             {#if previewText}
                                 <a href="{callToActionHref}" class="link">{previewText} <span aria-hidden="true">→</span></a>
@@ -181,7 +184,7 @@
         align-items: center;
     }
 
-    .button {
+    :global(.hero-button) {
         padding: 0.625rem 0.875rem;
         border-radius: 0.375rem;
         font-size: 0.875rem;
@@ -192,11 +195,11 @@
         box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
 
-    .button:hover {
+    :global(.hero-button:hover) {
         background-color: var(--button-hover-bg-color, #6366F1);
     }
 
-    .button:focus-visible {
+    :global(.hero-.button:focus-visible) {
         outline: var(--button-bg-color, #4F46E5) solid 2px;
         outline-offset: 2px;
     }

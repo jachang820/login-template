@@ -26,7 +26,6 @@
 
     let className = "";
     export {className as class};
-    $: className = className;
 
     const calculateViewBox = (viewBox: number | number[]): string => {
         let viewBoxValue: string;

@@ -11,6 +11,8 @@ export default [
         rules: {
             // override/add rules settings here, such as:
             // 'svelte/rule-name': 'error'
+            "a11y-no-noninteractive-element-interactions": "off",
+            "a11y-click-events-have-key-events": "off",
         },
         languageOptions: {
             parserOptions: {

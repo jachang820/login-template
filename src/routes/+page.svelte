@@ -1,12 +1,27 @@
 <script lang="ts">
     import {
+        Modal,
+        LoginForm,
         Hero_Tiles,
         Feature_ProductScreenshot,
         Footer_SimpleCentered,
         CTA_DarkPanel,
         Content_TiltedTiles
     } from "$lib/landing";
+
+    import { CiXpr } from "$lib/icons";
+
+    let modal: Modal;
 </script>
+
+<Modal bind:this={modal}>
+    <LoginForm
+        brand="App Name"
+        header="Something about the app"
+        description="Log in to the app, or sign up if it's you're first time!"
+        logoSrc={CiXpr}
+    />
+</Modal>
 
 <Hero_Tiles
     header="App Name"
@@ -16,7 +31,7 @@
         + "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt "
         + "mollit anim id est laborum."}
     buttonText="Try App Now!"
-    buttonHref="#"
+    buttonTarget={modal}
 />
 <Feature_ProductScreenshot
     header="App features"
