@@ -5,6 +5,7 @@
     import Divider from "$lib/Divider.svelte";
     import OutlinedInput from "$lib/OutlinedInput.svelte";
 
+
     // Props
     export let brand: string;
     export let header: string;
@@ -32,7 +33,8 @@
                 <span>Continue with Google</span>
             </button>
             <Divider label="or" />
-            <OutlinedInput label="Email" autocomplete="email" --outline-color-focused="#4F46E5" />
+            <OutlinedInput label="Email" type="email" autocomplete="email"
+                           --outline-color-focused="#4F46E5" />
             <button class="button email">
                 <Icon icon={BiEnvelope} width={32} height={32} class="login-form-button-icon" />
                 <span>Continue with email</span>
