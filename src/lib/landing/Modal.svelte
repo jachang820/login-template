@@ -1,35 +1,35 @@
 <script lang="ts">
-    import { BiCircleFill, BiX } from "$lib/icons";
+    import { BiCircleFill, BiX, WhiteXOnBlackCircle } from "$lib/icons";
     import Icon from "$lib/Icon.svelte";
 
+    // Deal with closing dialog when clicking on close button or overlay,
+    // but leaving it open when the panel itself is clicked.
     let dialog: HTMLDialogElement;
     let panel: HTMLDivElement;
-    $: closeClass = "modal-close-icon-back";
 
-
-    const focusCloseButton = () => {
-        closeClass = "modal-close-icon-back-hover";
-    };
-
-    const leaveCloseButton = () => {
-        closeClass = "modal-close-icon-back";
-    };
 
     const closeDialog = () => {
+        // Save vertical scroll position on page.
         let scrollPosition = window.scrollY;
+
+        // Slide dialog down while fading. Animate position is relative to the
+        // fully loaded page state.
         dialog
             .animate([{ top: "10vh", opacity: 0 }], { duration: 400 })
-            .finished.then(animation => {
-                animation.commitStyles();
-                dialog.close();
+            .finished.then(() => {
+                dialog.close(); // from HTML dialog API
+
+                // Load the saved scroll position so that it doesn't jump to the top or bottom of page.
+                window.scrollTo(0, scrollPosition);
             });
-        window.scrollTo(0, scrollPosition);
+
+
     };
 
     // Props
     export function open() {
         if (dialog) {
-            dialog.showModal();
+            dialog.showModal(); // from HTML dialog API
             dialog.animate([
                     { top: "-10vh", opacity: 0 },
                     { top: "0vh", opacity: 1 }
@@ -45,12 +45,9 @@
             <slot />
         </div>
         <button type="button" tabindex="0" class="modal-close-button"
-                on:click={closeDialog}
-                on:mouseover={focusCloseButton} on:focus={focusCloseButton}
-                on:mouseout={leaveCloseButton} on:blur={leaveCloseButton}>
+                on:click={closeDialog}>
 
-            <Icon icon={BiX} width={32} height={32} class="modal-close-icon-center" />
-            <Icon icon={BiCircleFill} width={32} height={32} class={closeClass} />
+            <Icon icon={WhiteXOnBlackCircle} width={32} height={32} />
 
         </button>
     </div>
@@ -95,30 +92,14 @@
         top: 1rem;
         right: 1rem;
         box-sizing: border-box;
-        /*background: radial-gradient(*/
-        /*        circle at center,*/
-        /*        rgb(96 96 96 / 0.6) 0,*/
-        /*        rgb(96 96 96 / 0.1) 10px,*/
-        /*        transparent 13px);*/
     }
 
-    :global(.modal-close-icon-back) {
-        position: absolute;
-        z-index: 50;
-        top: 0;
-        color: rgb(0 0 0 / 0);
+    .modal-close-button {
+        filter: opacity(0.75);
     }
 
-    :global(.modal-close-icon-back-hover) {
-        position: absolute;
-        z-index: 50;
-        top: 0;
-        color: rgb(56 56 56 / 0.1);
-    }
-
-    :global(.modal-close-icon-center) {
-        color: rgb(0 0 0);
-        z-index: 51;
+    .modal-close-button:hover {
+        filter: opacity(0.45);
     }
 
     @media (min-width: 640px) {
@@ -159,22 +140,6 @@
             margin-top: -3px;
             margin-left: 0.5rem;
             overflow: visible;
-            background: radial-gradient(
-                    circle at center,
-                    rgb(225 225 225 / 0.25) 0,
-                    transparent 15px);
-        }
-
-        :global(.modal-close-icon-back) {
-            color: rgb(0 0 0 / 0.5);
-        }
-
-        :global(.modal-close-icon-back-hover) {
-            color: rgb(80 80 80 / 0.25);
-        }
-
-        :global(.modal-close-icon-center) {
-            color: rgb(255 255 255);
         }
     }
 

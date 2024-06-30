@@ -12,15 +12,21 @@
     import { CiXpr } from "$lib/icons";
 
     let modal: Modal;
+
 </script>
+
+<svelte:head>
+    <title>Try App!</title>
+</svelte:head>
 
 <Modal bind:this={modal}>
     <LoginForm
         brand="App Name"
         header="Something about the app"
         description="Log in to the app, or sign up if it's you're first time!"
-        logoSrc={CiXpr}
-    />
+        logoSrc={CiXpr}>
+<!--        <span slot="fine-print">By continuing you agree to our Terms of Service and Privacy Agreement.</span>-->
+    </LoginForm>
 </Modal>
 
 <Hero_Tiles

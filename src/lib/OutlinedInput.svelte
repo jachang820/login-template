@@ -1,6 +1,7 @@
 <script lang="ts">
     // Props
     export let label:string;
+    export let autocomplete:string = "off";
     export let backgroundColor: string = "white";
 
     /** CSS variable props
@@ -18,7 +19,7 @@
     <div class="content-container">
         <div class="content">
             <label for="name" class="label" style="background-color: {backgroundColor}">{label}</label>
-            <input type="text" name="name" id="name" class="input" placeholder="you@example.com" />
+            <input type="text" name="name" id="name" class="input" placeholder="you@example.com" {autocomplete} />
         </div>
     </div>
 </div>
@@ -28,7 +29,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
     }
 
     .content-container {

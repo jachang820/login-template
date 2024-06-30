@@ -1,7 +1,6 @@
 <script lang="ts">
     import {signIn} from "@auth/sveltekit/client";
-    import type {IconType} from "$lib/icons";
-    import {FcGoogle, BiEnvelope} from "$lib/icons";
+    import {FcGoogle, BiEnvelope, type IconType} from "$lib/icons";
     import Icon from "$lib/Icon.svelte";
     import Divider from "$lib/Divider.svelte";
     import OutlinedInput from "$lib/OutlinedInput.svelte";
@@ -33,11 +32,19 @@
                 <span>Continue with Google</span>
             </button>
             <Divider label="or" />
-            <OutlinedInput label="Email" --outline-color-focused="#4F46E5" />
+            <OutlinedInput label="Email" autocomplete="email" --outline-color-focused="#4F46E5" />
             <button class="button email">
                 <Icon icon={BiEnvelope} width={32} height={32} class="login-form-button-icon" />
                 <span>Continue with email</span>
             </button>
+        </div>
+        <div class="fine-print-container">
+            <div class="fine-print">
+                <slot name="fine-print">
+                    By continuing, you agree to the App's <u>Terms of Use</u> and <u>Privacy Policy</u>,
+                    which have not been determined yet.
+                </slot>
+            </div>
         </div>
     </div>
     <div class="graphic-container">
@@ -55,6 +62,7 @@
 
     .content {
         margin: 2rem auto;
+        padding-top: 4rem;
     }
 
     :global(.login-form-logo) {
@@ -150,9 +158,25 @@
         display: none;
     }
 
+    .fine-print-container {
+        margin: 0.75rem auto;
+        width: 95%;
+    }
+
+    .fine-print {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1rem;
+        overflow-wrap: break-word;
+        max-width: 20rem;
+
+    }
+
     @media (min-width: 640px) {
         .content {
             margin: 2rem;
+            padding: 0;
         }
 
         .logo-container {

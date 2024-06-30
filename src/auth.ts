@@ -14,6 +14,7 @@ const providers: Provider[] = [
 export const { handle, signIn, signOut } = SvelteKitAuth({
     providers: providers,
     secret: AUTH_SECRET,
+    trustHost: true,
     pages: {
         signIn: "/"
     }
