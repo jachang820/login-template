@@ -1,7 +1,6 @@
 <script lang="ts">
-    export let header: string;
-    export let subheader: string;
-    export let description: string;
+    export let header: string = "App productivity";
+    export let subheader: string = "What can you do with this app?";
     export let tile1: string = "https://spotlight.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-1.c5d2141c.jpg&w=384&q=75";
     export let tile2: string = "https://spotlight.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-2.3c6c01cf.jpg&w=384&q=75";
     export let tile3: string = "https://spotlight.tailwindui.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimage-3.454151b1.jpg&w=384&q=75";
@@ -12,6 +11,10 @@
      * --header-text-color: #4F46E5
      * --subheader-text-color: #111827
      * --description-text-color: #4B5563
+     */
+
+    /** Named slots
+     *  description: Explain why people should use the app.
      */
 
 </script>
@@ -25,7 +28,13 @@
                         <div class="content">
                             <h2 class="header">{header}</h2>
                             <h1 class="subheader">{subheader}</h1>
-                            <p class="description">{description}</p>
+                            <p class="description">
+                                <slot name="description">
+                                    Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+                                    Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
+                                    In mi viverra elit nunc.
+                                </slot>
+                            </p>
                         </div>
                     </div>
                 </div>

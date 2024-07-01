@@ -14,9 +14,8 @@
     }
 
     // Props
-    export let header: string;
-    export let subheader: string;
-    export let description: string;
+    export let header: string = "App features";
+    export let subheader: string = "Feature tagline";
     export let features: ProductFeature[] = [
         {
             name: "Push to deploy.",
@@ -45,6 +44,10 @@
      * --description-text-color: #4B5563
      */
 
+    /** Named slots
+     *  description: Briefly give context to the main features.
+     */
+
 </script>
 
 <section class="outer">
@@ -54,7 +57,13 @@
                 <div class="content">
                     <h2 class="header">{header}</h2>
                     <p class="subheader">{subheader}</p>
-                    <p class="description">{description}</p>
+                    <p class="description">
+                        <slot name="description">
+                            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+                            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
+                            In mi viverra elit nunc.
+                        </slot>
+                    </p>
                     <dl class="features">
                         {#each features as feature}
                             <div class="feature">

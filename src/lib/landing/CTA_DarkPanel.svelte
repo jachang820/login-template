@@ -1,10 +1,12 @@
 <script lang="ts">
+    import { Modal } from "$lib/landing"
+    import MultiLink from "$lib/MultiLink.svelte";
+
     // Props
-    export let header: string;
-    export let description: string;
-    export let buttonText: string;
+    export let header: string = "Call to action";
+    export let buttonText: string = "Join us now!";
     export let callToAction: string = "";
-    export let buttonHref: string = "#";
+    export let buttonTarget: Modal | string = "#";
     export let callToActionHref: string = "#";
     export let spotlightCenterColor: string = "#7775D6";
     export let spotlightPeripheralColor: string = "#E935C1";
@@ -16,15 +18,26 @@
      * --button-bg-color: white
      * --button-hover-bg-color: #F3F4F6
      */
+
+    /** Named slots
+     *  description: Convince people to take action.
+     */
+
 </script>
 
 <section class="outer">
     <div class="panel">
         <div class="panel-body">
             <h2 class="header">{header}</h2>
-            <p class="description">{description}</p>
+            <p class="description">
+                <slot name="description">
+                    Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
+                    Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
+                    In mi viverra elit nunc.
+                </slot>
+            </p>
             <div class="button">
-                <a href="{buttonHref}" class="button-text">{buttonText}</a>
+                <MultiLink target={buttonTarget} class="cta-dark-panel-button">{buttonText}</MultiLink>
 
                 {#if callToAction}
                     <a href="{callToActionHref}" class="cta-link">{callToAction} <span aria-hidden="true">→</span></a>
@@ -96,24 +109,29 @@
 
     }
 
-    .button-text {
+    :global(.cta-dark-panel-button) {
+        z-index: 1;
         padding: 0.625rem 0.875rem;
         border-radius: 0.375rem;
         font-size: 0.875rem;
         line-height: 1.25rem;
         font-weight: 600;
         color: var(--panel-bg-color, #111827);
-        background-color: var(--button-bg-color, white);
+        background-color: var(--button-bg-color, rgb(255, 229, 254));
         box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
 
-    .button-text:hover {
-        background-color: var(--button-hover-bg-color, #F3F4F6);
+    :global(.cta-dark-panel-button:hover) {
+        background-color: var(--button-hover-bg-color, rgb(234, 211, 255));
     }
 
-    .button-text:focus-visible {
+    :global(.cta-dark-panel-button:focus-visible) {
         outline: white solid 2px;
         outline-offset: 2px;
+    }
+
+    :global(.cta-dark-panel-button:active) {
+        transform: scale(0.95);
     }
 
     .cta-link {

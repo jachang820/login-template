@@ -3,9 +3,8 @@
     import MultiLink from "$lib/MultiLink.svelte";
 
     // Props
-    export let header: string;
-    export let description: string;
-    export let buttonText: string;
+    export let header: string = "App Name";
+    export let buttonText: string = "Try App now!";
     export let previewText: string = "";
     export let buttonTarget: Modal | string = "#";
     export let callToActionHref: string = "#";
@@ -23,6 +22,10 @@
      * --desc-text-color: #4B5563
      * --button-bg-color: #4F46E5
      * --button-hover-bg-color: #6366F1
+     */
+
+    /** Named slots
+     *  description: Give an elevator pitch to app.
      */
 
 </script>
@@ -48,7 +51,15 @@
                 <div class="content">
                     <div class="text-content">
                         <h1 class="header">{header}</h1>
-                        <p class="description">{description}</p>
+                        <p class="description">
+                            <slot name="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                sunt in culpa mollit anim id est laborum.
+                            </slot>
+                        </p>
                         <div class="actions">
                             <MultiLink target={buttonTarget} class="hero-button">{buttonText}</MultiLink>
 
@@ -199,9 +210,13 @@
         background-color: var(--button-hover-bg-color, #6366F1);
     }
 
-    :global(.hero-.button:focus-visible) {
+    :global(.hero-button:focus-visible) {
         outline: var(--button-bg-color, #4F46E5) solid 2px;
         outline-offset: 2px;
+    }
+
+    :global(.hero-button:active) {
+        transform: scale(0.95);
     }
 
     .link {
