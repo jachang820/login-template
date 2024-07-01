@@ -59,14 +59,13 @@
 <style>
     .outer {
         background-color: transparent;
+        padding: 3rem 0;
     }
 
     .panel {
         max-width: 80rem;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 6rem;
-        padding-bottom: 6rem;
     }
 
     .panel-body {
@@ -152,8 +151,12 @@
     }
 
     @media (min-width: 640px) {
+        .outer {
+            padding: 4rem 0;
+        }
+
         .panel {
-            padding: 8rem 1.5rem;
+            padding: 1.5rem;
         }
 
         .panel-body {

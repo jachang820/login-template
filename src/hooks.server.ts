@@ -23,7 +23,7 @@ const authorizationHandle: Handle = async function ({ event, resolve }) {
 const fetchHandle: Handle = async function ({event, resolve}){
     const response = await resolve(event);
     response.headers.set('x-content-type-options', 'nosniff');
-    response.headers.set('referrer-policy', 'noreferrer');
+    response.headers.set('referrer-policy', 'no-referrer');
     response.headers.set('content-security-policy', "frame-ancestors 'self'");
     return response;
 };

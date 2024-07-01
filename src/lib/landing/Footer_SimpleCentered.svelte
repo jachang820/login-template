@@ -82,7 +82,7 @@
         </nav>
         <div class="social-row">
             {#each navigationSocial as item}
-                <a href="{item.href}" class="social-link">
+                <a href="{item.href}" target="_blank" rel="noopener noreferrer" class="social-link">
                     <span class="screen-reader">{item.name}</span>
                     <Icon icon={item.icon} />
                 </a>
